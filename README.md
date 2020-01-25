@@ -1,1 +1,2 @@
 # KoperasiSimpanPinjam-RSUD
+Sebuah project aplikasi dengan bahasa Java menggunakan IDE Netbeans 8.2 yang sudah di clean and build menjadi file .jar dengan akses login single user, 8 keluaran dengan ireport JasperReport plugin dan 4 form data masukkan juga file database .sql yang ada. Project aplikasi ini merupakan penunjang tugas akhir perkuliahan, jika ingin mengembangkan menjadi lebih baik dipersilahkan dan jika membutuhkan master filenya dipersilahkan juga untuk email. Terimakasih
