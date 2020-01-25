@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c70558a3-b18a-44d5-97ca-ff7a95e3eb6e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="13"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="KodeP" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     pinjaman.`no_anggota` AS no_anggota,
+     pinjaman.`kd_pinjaman` AS kd_pinjaman,
+     pinjaman.`tgl_pinjaman` AS tgl_pinjaman,
+     pinjaman.`jumlah_pinjaman` AS jumlah_pinjaman,
+     pinjaman.`lama_pinjaman` AS lama_pinjaman,
+     pinjaman.`potongan_pinjaman` AS potongan_pinjaman,
+     pinjaman.`angsuran` AS angsuran,
+     pinjaman.`total_angsuran` AS total_angsuran
+FROM
+     `pinjaman` pinjaman
+WHERE
+     kd_pinjaman = $P{KodeP}]]>
+	</queryString>
+	<field name="no_anggota" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pinjaman" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lama_pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="potongan_pinjaman" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="angsuran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_angsuran" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<image>
+				<reportElement x="8" y="8" width="70" height="70" uuid="d0c8443a-7c52-4458-b6eb-eed6283879ab"/>
+				<imageExpression><![CDATA["D:\\Programming\\Netbeans\\KopTA\\src\\Laporan\\koperasi.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="90" y="0" width="286" height="70" uuid="dac92991-bba0-4607-9aa2-9a2438d05c3c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[Koperasi Swadaya Ceria
+RSUD Ciracas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="70" width="571" height="20" uuid="4a0c9b91-d5eb-4010-83eb-7df542bfc7ed"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jalan Lapangan Tembak Cibubur I, Telp: 021-87711249, Fax: 8718995 Email: rsuciracas@gmail.com JAKARTA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="802" height="1" uuid="24ae0afd-6269-4410-870b-98770ed507b5"/>
+			</line>
+			<line>
+				<reportElement x="0" y="39" width="802" height="1" uuid="85f32aff-c82f-43cc-b98d-b3297fae7053"/>
+			</line>
+			<staticText>
+				<reportElement x="295" y="1" width="214" height="38" uuid="0ab107a2-0acc-49d6-9313-9a3ed92d9788"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16"/>
+				</textElement>
+				<text><![CDATA[BUKTI PINJAMAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="31" width="123" height="20" uuid="73577024-af07-46a1-8706-3cfe4fb034ef"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No. Anggota:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="31" width="245" height="20" uuid="5ea555ab-5f99-4793-83b1-50e2f78cd20f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_anggota}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="10" width="123" height="20" uuid="edfe2377-991f-4d70-8054-484b89c36a63"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Kode Pinjaman:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="10" width="245" height="20" uuid="cd81ffd8-c6e4-4eb1-9f7c-fbc698df304d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kd_pinjaman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="52" width="123" height="20" uuid="66657f50-7da8-4865-ace4-d2d683254119"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tanggal Pinjaman:]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="131" y="52" width="245" height="20" uuid="13de1579-cc86-4b4e-b6d7-12e6b5d88afe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_pinjaman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="10" width="100" height="20" uuid="c262f33f-8c7e-4688-8903-2c2bfb6e27db"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jumlah Pinjaman:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="10" width="257" height="20" uuid="82dd9d00-cba1-4c89-ab9e-6487bcadff55"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlah_pinjaman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="73" width="123" height="20" uuid="6083dfd8-030e-44a0-8eb7-8284de7e96da"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Lama Pinjaman (bulan):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="73" width="245" height="20" uuid="c8255540-139f-41be-a4f0-e930d7a291c6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lama_pinjaman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="31" width="100" height="20" uuid="2ef9ddb1-eeef-47d0-8592-b80c386e1acf"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Potongan (%):]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="31" width="257" height="20" uuid="4ec6c1de-a968-4a27-b174-bcf81dc58891"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{potongan_pinjaman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="52" width="100" height="20" uuid="b6003bae-f945-40ea-ae87-594079ed57cf"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Angsuran:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="52" width="257" height="20" uuid="1b621472-2672-4e57-be94-484fd2448f1f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{angsuran}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="73" width="100" height="20" uuid="1728be71-a3a1-4ff6-b1e8-0206da57089d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Total Dapat:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="497" y="73" width="257" height="20" uuid="aaf9bd82-2d8d-4b5f-83f3-1ab7e195a0f0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{total_angsuran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="120" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="702" y="0" width="100" height="20" uuid="66d08906-9572-40ea-9d99-0d1a0af4c739"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="661" y="0" width="41" height="20" uuid="e27edbe3-0774-43cb-80e7-563206370d52"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="661" y="20" width="141" height="20" uuid="aa39a0da-e95f-4d1b-ae03-dbc046dc1e32"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Mengetahui, Ketua Koperasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="702" y="100" width="100" height="20" uuid="0d1b96a9-0f67-448d-a4d4-de154032060a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[LIA PURWANTI]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
